@@ -1,0 +1,25 @@
+.text-white {
+    color: white;
+   
+  }
+  
+  .text-decoration-none {
+    text-decoration: none;
+  }
+  
+  .mr-3 {
+    margin-right: 16px; /* Adjust the margin as needed */
+    
+
+  }
+  .mr-3:hover{
+    color: #0033ff;
+
+  }
+  
+  .link-hover:hover {
+     /* Change this to your desired hover color */
+    text-decoration: underline; /* Optional: Add underline on hover */
+    
+  }
+  

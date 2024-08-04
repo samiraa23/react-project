@@ -1,0 +1,22 @@
+body {
+  /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPLnTwMt-CnR4A78168ema2rW0ATQVem-2dQ&s'); External URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* Ensures the image does not repeat */
+}
+
+.page-content {
+  background: rgba(255, 255, 255, 0.8); /* Adding a white background with some transparency */
+  padding: 20px;
+  color: black; /* Set text color to black */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}

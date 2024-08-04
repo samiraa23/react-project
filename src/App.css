@@ -1,38 +1,117 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  color: #333;
+  background-color: #f7f9fc; /* Light grey background */
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* background-color: #f7f9fc; */
+}
+
+h2 {
+  font-family: 'Playfair Display', serif; /* Decorative font for headers */
+  color: #4CAF50;
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+h5 {
+  font-family: 'Playfair Display', serif; /* Decorative font for subheaders */
+  color: green;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 1em;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+.footer {
+  background-color: #343a40;
+  color:black;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  
+}
+
+
+footer a {
+  color:black;
+  text-decoration: none;
+  margin: 0 0.5em;
+  
+}
+
+footer a:hover {
+  color: #1c34bc;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff; /* White background for forms */
+  padding: 2em;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+form > * {
+  margin-bottom: 1em;
+}
+
+.MuiTypography-h5 {
+  font-weight: bold;
+}
+
+.MuiCardContent-root {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.MuiTypography-body2 {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.MuiCard-root {
+  border-radius: 12px; /* Rounded corners */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 768px) {
+  .MuiCard-root {
+    max-width: 100%; /* Make cards full-width on smaller screens */
+    margin: 10px;
   }
 }

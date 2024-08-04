@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import Home from './Components/Home';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Footer from './Components/Footer';
+import People from './Components/People';
 
-function App() {
+
+const App = () => {
+  const [people, setPeople] = useState([]);
+
+  // Function to add a new person to the list
+  const addPerson = (person) => {
+    setPeople((prevPeople) => [...prevPeople, person]);
+  };
+
+  // Function to remove a person from the list
+  const removePerson = (id) => {
+    setPeople((prevPeople) => prevPeople.filter(person => person.id !== id));
+  };
+
+  // Function to update a person's details
+  const updatePerson = (updatedPerson) => {
+    setPeople((prevPeople) =>
+      prevPeople.map(person =>
+        person.id === updatedPerson.id ? updatedPerson : person
+      )
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact addPerson={addPerson} />} />
+          <Route path="/people" element={<People people={people} removePerson={removePerson} updatePerson={updatePerson} />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
